@@ -15,4 +15,11 @@ class Api::BooksController < ApplicationController
     @book.save
     render 'show.json.jb'
   end
+  def update
+    @book = Book.find_by(id: params[:id])
+    @book.title = params[:title] || @book.title
+    @book.pages = params[:pages] || @book.pages
+    @book.save
+    render 'show.json.jb'
+  end
 end
