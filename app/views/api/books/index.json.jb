@@ -1,0 +1,6 @@
+@books.map do |book|
+  {
+    title: book.title,
+    pages: book.pages
+  }
+end
