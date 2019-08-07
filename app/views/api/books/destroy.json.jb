@@ -1,0 +1,4 @@
+{
+  message: "Book destroyed",
+  title: @book.title
+}
