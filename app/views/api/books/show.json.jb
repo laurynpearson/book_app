@@ -1,4 +1,4 @@
 {
   title: @book.title,
-  number_of_pages: @book.pages
+  pages: @book.pages
 }
