@@ -1,4 +1,5 @@
 {
+  id: @book.id,
   title: @book.title,
   pages: @book.pages
 }
