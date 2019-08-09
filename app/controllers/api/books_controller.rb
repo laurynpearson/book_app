@@ -19,12 +19,16 @@ class Api::BooksController < ApplicationController
     @book = Book.find_by(id: params[:id])
     @book.title = params[:title] || @book.title
     @book.pages = params[:pages] || @book.pages
-    @book.save
-    render 'show.json.jb'
+    if @book.save
+      render 'show.json.jb'
+    else
+      render json: {errors: @book.errors.full_messages}, status: :unprocessable_entity
+    end
   end
   def destroy
     @book = Book.find_by(id: params[:id])
     @book.destroy
     render 'destroy.json.jb'
   end
+
 end
